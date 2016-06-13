@@ -1,0 +1,29 @@
+2 E Main St, Madison, WI 53703
+Minnesota State Capitol, St Paul, MN 55155
+Iowa State Capitol, 1007 E Grand Ave, Des Moines, IA 50319
+Nebraska State Capitol, 1445 K Street, Lincoln, NE 68509
+300 SW 10th Ave, Topeka, KS 66612
+Missouri State Capitol, Jefferson City, MO 65101
+Arkansas State Capitol, 500 Woodlane Street, Little Rock, AR 72201
+400-498 N West St, Jackson, MS 39201
+Alabama State Capitol, 600 Dexter Avenue, Montgomery, AL 36130
+Georgia State Capitol, Atlanta, GA 30334
+South Carolina State House, 1100 Gervais Street, Columbia, SC 29201
+North Carolina State Capitol, Raleigh, NC 27601
+Virginia State Capitol, Richmond, VA 23219
+Maryland State House, 100 State Cir, Annapolis, MD 21401
+Legislative Hall: The State Capitol, Legislative Avenue, Dover, DE 19901
+New Jersey State House, Trenton, NJ 08608
+Connecticut State Capitol, 210 Capitol Ave, Hartford, CT 06106
+Rhode Island State House, 82 Smith Street, Providence, RI 02903
+Massachusetts State House, Boston, MA 02108
+State House, 107 North Main Street, Concord, NH 03303
+Maine State House, Augusta, ME 04330
+Vermont State House, 115 State Street, Montpelier, VT 05633
+New York State Capitol, State St. and Washington Ave, Albany, NY 12224
+Pennsylvania State Capitol Building, North 3rd Street, Harrisburg, PA 17120
+West Virginia State Capitol, Charleston, WV 25317
+Ohio State Capitol, 1 Capitol Square, Columbus, OH 43215
+Kentucky State Capitol Building, 700 Capitol Avenue, Frankfort, KY 40601
+Indiana State Capitol, Indianapolis, IN 46204
+Illinois State Capitol, Springfield, IL 62756

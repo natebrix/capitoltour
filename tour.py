@@ -110,21 +110,28 @@ class CapitolTour:
             d = [row[0] for row in r]
         return d
 
+    def get_latlong(self, latlong):
+        with open(latlong, 'rb') as f:
+            r = csv.reader(f, delimiter=',')
+            next(r, None)
+            return [(float(row[1]), float(row[2])) for row in r]
+
+
     def dist_from_coords(self, dist, n):
         points = []
-        for i in range(self.n):
+        for i in range(n):
             points.append([0] * n)
         for i, j, v in dist:
             points[i][j] = points[j][i] = float(v)
         return points
 
-    def tour_distance(self, tour, dist):
-        tour_dist = dist[tour[-1]][tour[0]]
-        i = tour[0]
+    def leg_distances(self, tour, dist):
+        legs = []
+        i = tour[-1]
         for j in tour:
-            tour_dist += dist[i][j]
+            legs.append(dist[i][j])
             i = j
-        return tour_dist
+        return legs
 
     # Find an optimal tour among the cities specified in tsp_file.
     # k is an optional parameter. If specified, an optimal tour of length k
@@ -197,11 +204,12 @@ class CapitolTour:
             print(loc)
 
         # let's check our math.
-        tour_dist = self.tour_distance(tour, dist)
+        leg_dist = self.leg_distances(tour, dist)
+        tour_dist = sum(leg_dist)
         print(tour_dist)
         assert abs(tour_dist - m.objVal) <= 1e-4
 
-        return tour, m.objVal, [idx_map[i] for i in tour]
+        return tour, leg_dist, [idx_map[i] for i in tour]
 
     # Finds 'efficient frontier': minimal length tour involving K cities for K = 3..48.
     def find_efficient_frontier(self):
@@ -215,9 +223,10 @@ class CapitolTour:
         for t, dist, names in zip(*r):
             n = len(t)
             n_s = str(n).zfill(2)
-            with open(tsp_path + "tour_id_%s.txt" % n_s, 'wb') as csvfile:
-                csvfile.write('\n'.join(map(str, t)))
-            with open(tsp_path + "dist_%s.txt" % n_s, 'wb') as csvfile:
-                csvfile.write('%f\n' % dist)
-            with open(tsp_path + "tour_names_%s.txt" % n_s, 'wb') as csvfile:
-                csvfile.write('\n'.join(names))
+            with open(tsp_path + "tour_id_%s.txt" % n_s, 'wb') as f:
+                f.write('\n'.join(map(str, t)))
+            with open(tsp_path + "dist_%s.txt" % n_s, 'wb') as f:
+                f.write('\n'.join(map(str, dist)))
+            with open(tsp_path + "tour_names_%s.txt" % n_s, 'wb') as f:
+                f.write('\n'.join(names))
+
